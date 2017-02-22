@@ -36,6 +36,7 @@ StarWars = (function() {
    */
   function StarWars(args) {
     // Context wrapper
+    this.body = $('body');
     this.el = $(args.el);
     
     // Audio to play the opening crawl
@@ -56,6 +57,7 @@ StarWars = (function() {
       this.start.hide();
       this.audio.play();
       this.el.append(this.animation);
+      this.body.addClass('stars');
     }, this));
     
     // Reset the animation and shows the start screen

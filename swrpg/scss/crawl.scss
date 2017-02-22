@@ -5,15 +5,19 @@ $crawl-yellow:      #ffd54e;
 
 html,
 body {
-  width: 100%;
-  height: 100%;
+  width: 100vh;
+  height: 100vh;
   font: 700 16px "News Cycle", sans-serif;
-  letter-spacing:.15em;
+  letter-spacing: .125rem; // 2px
   color: $crawl-yellow;
-  background: #000 url("../img/bg-stars.png") 50% 50% no-repeat;
+  background: #000 url("../img/bg-stars.png") 0 0 repeat;
   background-size: cover;
   overflow: hidden;
   margin: 0;
+}
+
+.stars {
+  animation: stars 4s ease-in-out 93s;
 }
 
 .starwars {
@@ -27,6 +31,13 @@ body {
       left: 0;
     z-index: 1;
   } 
+
+  .overview {
+    font-size: 2rem; // 32px
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 
   .start {
     font-size: 2rem; // 32px
@@ -82,8 +93,8 @@ body {
       top: 100%;
       animation: titles 81s linear 13s;
       > p {
-        margin: 1.35em 0 1.85em 0;
-        line-height: 1.35em;
+        margin: 1.35rem 0 1.85rem 0; // 22px 0 30px
+        line-height: 1.35;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
       }
@@ -131,5 +142,14 @@ body {
   100% { 
     top: 20%; 
     opacity: 0;
+  }
+}
+
+@keyframes stars {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -2400px;
   }
 }

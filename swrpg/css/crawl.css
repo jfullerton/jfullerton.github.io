@@ -1,7 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
-html, body { width: 100%; height: 100%; font: 700 16px "News Cycle", sans-serif; letter-spacing: .15em; color: #ffd54e; background: #000 url("../img/bg-stars.png") 50% 50% no-repeat; background-size: cover; overflow: hidden; margin: 0; }
+html, body { width: 100vh; height: 100vh; font: 700 16px "News Cycle", sans-serif; letter-spacing: .125rem; color: #ffd54e; background: #000 url("../img/bg-stars.png") 0 0 repeat; background-size: cover; overflow: hidden; margin: 0; }
+
+.stars { animation: stars 4s ease-in-out 93s; }
 
 .starwars section { display: -ms-flexbox; display: flex; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; }
+
+.starwars .overview { font-size: 2rem; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; text-align: center; }
 
 .starwars .start { font-size: 2rem; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; text-align: center; cursor: pointer; z-index: 4; }
 
@@ -17,7 +21,7 @@ html, body { width: 100%; height: 100%; font: 700 16px "News Cycle", sans-serif;
 
 .starwars .titles > div { position: absolute; top: 100%; animation: titles 81s linear 13s; }
 
-.starwars .titles > div > p { margin: 1.35em 0 1.85em 0; line-height: 1.35em; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.starwars .titles > div > p { margin: 1.35rem 0 1.85rem 0; line-height: 1.35; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
 
 @keyframes intro { 0% { opacity: 0; }
   20% { opacity: 1; }
@@ -35,3 +39,6 @@ html, body { width: 100%; height: 100%; font: 700 16px "News Cycle", sans-serif;
   95% { opacity: 1; }
   100% { top: 20%;
     opacity: 0; } }
+
+@keyframes stars { 0% { background-position: 0 0; }
+  100% { background-position: 0 -2400px; } }
