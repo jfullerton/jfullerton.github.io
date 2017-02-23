@@ -11,13 +11,15 @@ html, body { width: 100vh; height: 100vh; font: 700 16px "News Cycle", sans-seri
 
 .starwars .overview ul { color: #555; list-style: none; margin: 0; padding: 0; }
 
-.starwars .overview ul li { margin: 0 0 10px; }
+.starwars .overview ul li { line-height: 1; margin: 0 0 10px; }
 
-.starwars .overview ul span span { background-color: #555; }
+.starwars .overview ul span { display: inline-block; padding: 18px; }
 
-.starwars .overview a { border-bottom: 3px solid transparent; color: #ffd54e; display: inline-block; text-decoration: none; transition: all 0.2s ease-in-out; }
+.starwars .overview ul span span { background-color: #555; padding: 0; }
 
-.starwars .overview a:hover { border-color: #ffd54e; text-decoration: none; }
+.starwars .overview a { border-color: transparent; border-style: solid; border-width: 10px; color: #ffd54e; display: inline-block; text-decoration: none; transition: all 0.2s ease-in-out; padding: 8px; }
+
+.starwars .overview a:hover { animation: pulse 2s ease-in-out infinite; text-decoration: none; }
 
 .starwars .start { font-size: 2rem; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; text-align: center; cursor: pointer; z-index: 4; }
 
@@ -34,6 +36,10 @@ html, body { width: 100vh; height: 100vh; font: 700 16px "News Cycle", sans-seri
 .starwars .titles > div { position: absolute; top: 100%; animation: titles 81s linear 13s; }
 
 .starwars .titles > div > p { margin: 1.35rem 0 1.85rem 0; line-height: 1.35; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+
+@keyframes pulse { 0% { border-color: rgba(255, 213, 78, 0.1); }
+  50% { border-color: #ffd54e; }
+  100% { border-color: rgba(255, 213, 78, 0.1); } }
 
 @keyframes intro { 0% { opacity: 0; }
   20% { opacity: 1; }
