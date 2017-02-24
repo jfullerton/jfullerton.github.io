@@ -1,39 +1,39 @@
 @import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
-html, body { width: 100vh; height: 100vh; font: 700 16px "News Cycle", sans-serif; letter-spacing: .125rem; color: #ffd54e; background: #000 url("../img/bg-stars.png") 0 0 repeat; overflow: hidden; margin: 0; }
+html, body { width: 100vw; height: 100vh; font: 700 16px "News Cycle", sans-serif; letter-spacing: .125rem; color: #ffd54e; background: #000 url("../img/bg-stars.png") 0 0 repeat; overflow: hidden; margin: 0; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 
 .stars { animation: stars 4s ease-in-out 93s; }
 
 .starwars section { display: -ms-flexbox; display: flex; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; }
 
-.starwars .overview { font-size: 3rem; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; text-align: center; text-transform: uppercase; }
+.starwars .overview { font-size: 3vw; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; text-align: center; text-transform: uppercase; }
 
 .starwars .overview > div { transform-origin: 50% 100%; transform: perspective(300px) rotateX(25deg); }
 
-.starwars .overview ul { color: #555; list-style: none; margin: 0; padding: 0; }
+.starwars .overview ul { color: #555; list-style: none; margin: 0; padding: 0; transition: all 0.2s ease-in-out; }
 
-.starwars .overview ul li { line-height: 1; margin: 0 0 10px; }
+.starwars .overview ul li { line-height: 1; margin: 0 0 0.5em; }
 
-.starwars .overview ul span { display: inline-block; padding: 18px; }
+.starwars .overview ul span { display: inline-block; padding: 0.35em; }
 
 .starwars .overview ul span span { background-color: #555; padding: 0; }
 
-.starwars .overview a { border-color: transparent; border-style: solid; border-width: 10px; color: #ffd54e; display: inline-block; text-decoration: none; transition: all 0.2s ease-in-out; padding: 8px; }
+.starwars .overview a { border-color: transparent; border-style: solid; border-width: 0.1em; color: #ffd54e; display: inline-block; text-decoration: none; padding: 0.25em; }
 
 .starwars .overview a:hover { animation: pulse 2s ease-in-out infinite; text-decoration: none; }
 
-.starwars .start { font-size: 2rem; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; text-align: center; cursor: pointer; z-index: 4; }
+.starwars .start { color: #4bd5ee; font-size: 5vw; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; text-align: center; cursor: pointer; text-transform: uppercase; z-index: 4; }
 
-.starwars .intro { font-size: 2rem; font-weight: 400; color: #4bd5ee; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; opacity: 0; animation: intro 6s ease-out 1s; z-index: 3; }
+.starwars .intro { font-size: 5vw; font-weight: 400; color: #4bd5ee; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; opacity: 0; animation: intro 6s ease-out 1s; z-index: 3; }
 
 .starwars .logo { -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; margin: 0 auto; z-index: 2; }
 
-.starwars .logo svg { opacity: 0; animation: logo 9s ease-out 9s; width: inherit; }
+.starwars .logo svg { opacity: 0; animation: logo 9s ease-out 9s; width: 100vw; height: auto; }
 
-.starwars .titles { width: 16em; margin: 0 auto; top: auto; bottom: 0; height: 50em; font-size: 3.5rem; text-align: justify; overflow: hidden; transform-origin: 50% 100%; transform: perspective(300px) rotateX(25deg); z-index: 1; }
+.starwars .titles { width: 60vw; margin: 0 auto; top: auto; bottom: 0; height: 50em; font-size: 4vw; text-align: justify; overflow: hidden; transform-origin: 50% 100%; transform: perspective(300px) rotateX(25deg); z-index: 1; }
 
 .starwars .titles .title { text-align: center; text-transform: uppercase; }
 
-.starwars .titles > div { position: absolute; top: 100%; animation: titles 81s linear 13s; }
+.starwars .titles > div { position: absolute; top: 100%; animation: titles 78s linear 16s; }
 
 .starwars .titles > div > p { margin: 1.35rem 0 1.85rem 0; line-height: 1.35; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
 

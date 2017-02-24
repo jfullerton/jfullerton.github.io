@@ -41,7 +41,6 @@ StarWars = (function() {
     
     // Audio to play the opening crawl
     this.audio = this.el.find('audio').get(0);
-    this.audioDefer = $.Deferred();
     
     // Start the animation
     this.start = this.el.find('.start');
@@ -55,6 +54,7 @@ StarWars = (function() {
     // Start the animation on click
     this.start.bind('click', $.proxy(function() {
       this.start.hide();
+      this.start.find("p").html("Replay");
       this.audio.play();
       this.el.append(this.animation);
       this.body.addClass('stars');
