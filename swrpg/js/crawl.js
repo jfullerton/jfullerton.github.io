@@ -41,6 +41,7 @@ StarWars = (function() {
     
     // Audio to play the opening crawl
     this.audio = this.el.find('audio').get(0);
+    this.audio.volume = 0.25;
     
     // Start the animation
     this.start = this.el.find('.start');
