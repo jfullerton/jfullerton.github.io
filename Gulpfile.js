@@ -6,7 +6,6 @@ var gulp = require('gulp'),
     autoprefixer = require('autoprefixer'),
     cssnano = require('cssnano'),
     rename = require('gulp-rename'),
-    livereload = require('gulp-livereload'),
     del = require('del');
 
 // Styles
@@ -28,8 +27,7 @@ gulp.task('styles', function() {
     .pipe(bytediff.start())
     .pipe(postcss([cssnano()]))
     .pipe(bytediff.stop())
-    .pipe(gulp.dest('./swrpg/css'))
-    .pipe(livereload());
+    .pipe(gulp.dest('./swrpg/css'));
 });
 
 // Clean build
@@ -43,9 +41,6 @@ gulp.task('clean', function() {
 
 // Watch
 gulp.task('watch',function() {
-
-  // Create livereload server
-  livereload.listen({quiet: true});
 
   // Watch for file changes
   gulp.watch('./swrpg/scss/**/*.scss', ['styles']);

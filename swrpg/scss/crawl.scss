@@ -8,6 +8,7 @@ body {
   width: 100vw;
   height: 100vh;
   font: 700 16px "News Cycle", sans-serif;
+  font-variant-ligatures: none;
   letter-spacing: .125rem; // 2px
   color: $crawl-yellow;
   background: #000 url("../img/bg-stars.png") 0 0 repeat;
