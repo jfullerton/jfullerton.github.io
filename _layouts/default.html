@@ -59,15 +59,19 @@
 				animation-delay: 1300ms;
 			}
 			a{
+				display: inline-block;
+				position: relative;
+				top: 0;
 				color:#bbdefb;
 				text-decoration:none;
 				text-shadow: 2px 2px 2px #0277bd;
-				transition: all 200ms ease-in-out;
+				transition: text-shadow 200ms ease-in-out, color 200ms ease-in-out, top 200ms ease-in-out;
 			}
 			a:active,a:hover{
 				color:#fff;
 				outline:none;
 				text-shadow: 4px 4px 2px #0277bd;
+				top: -2px;
 			}
 			.splat {
 				-webkit-animation: splat 865ms linear both;
