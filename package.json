@@ -1,21 +1,25 @@
 {
   "name": "jfullerton",
-  "version": "1.0.0",
-  "description": "jfullerton",
+  "version": "2.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/jfullerton/jfullerton.github.io.git"
   },
-  "author": "Jared Fullerton",
+  "author": "Jared Fullerton <jared.fullerton@gmail.com>",
   "license": "ISC",
-  "devDependencies": {
-    "autoprefixer": "9.6.1",
-    "cssnano": "4.1.10",
-    "del": "5.0.0",
-    "gulp": "4.0.2",
-    "gulp-bytediff": "1.0.0",
-    "gulp-postcss": "8.0.0",
-    "gulp-rename": "1.4.0",
-    "gulp-sass": "4.0.2"
+  "dependencies": {
+    "autoprefixer": "^9.7.3",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "resolutions": {
+    "**/**/fsevents": "^2.1.2"
   }
 }
