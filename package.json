@@ -8,18 +8,15 @@
   "author": "Jared Fullerton <jared.fullerton@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "autoprefixer": "^9.7.3",
+    "autoprefixer": "^9.8.5",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5"
   },
   "browserslist": [
     "last 2 versions"
-  ],
-  "resolutions": {
-    "**/**/fsevents": "^2.1.2"
-  }
+  ]
 }
