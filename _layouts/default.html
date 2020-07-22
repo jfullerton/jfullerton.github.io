@@ -4,21 +4,43 @@
 		<title>{{ page.title }}</title>
 		<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://fonts.googleapis.com/css?family=Exo+2:200,900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&Poppins:wght@600&display=swap" rel="stylesheet">
 		<style>
 			* {
 				box-sizing:border-box;
 			}
 			html{
-				font-family:"Exo 2", sans-serif;
+				font-family:"Poppins", sans-serif;
 				-ms-text-size-adjust:100%;
 				-webkit-text-size-adjust:100%;
 				font-size:16px;
 				-webkit-font-smoothing:antialiased;
 			}
 			body {
-				background-color:#222;
-				color:#fff;
+				--link-color: #E74C3C;
+			  --text-color: #222;
+			  --bkg-color: #fff;
+			}
+			body.dark-theme {
+				--link-color: #F1C40F;
+			  --text-color: #eee;
+			  --bkg-color: #121212;
+			}
+			@media (prefers-color-scheme: dark) {
+			  body {
+					--link-color: #F1C40F;
+				  --text-color: #eee;
+				  --bkg-color: #121212;
+			  }
+			  body.light-theme {
+					--link-color: #E74C3C;
+				  --text-color: #222;
+				  --bkg-color: #fff;
+			  }
+			}
+			body {
+				background-color:var(--bkg-color);
+				color:var(--text-color);
 				display:flex;
 				flex-wrap:wrap;
 				align-items:center;
@@ -26,50 +48,52 @@
 				height:100vh;
 				margin:0;
 				padding:2rem;
-				text-transform:uppercase;
 			}
 			h1,h2,h3,h4 {
-				font-weight:200;
+				font-weight:300;
 				flex:0 0 100%;
+				line-height: 1;
 				text-align: center;
-				margin:0;
-				letter-spacing:2px;
+				margin:0 0 .75rem;
 				position:relative;
 				padding:0;
+				text-transform: uppercase;
 			}
 			h1 {
 				font-size:2.5rem;
-				font-weight:900;
+				font-weight:600;
+				text-transform: none;
 			}
 			h2 {
 				font-size:1.5rem;
-				font-weight:900;
+				font-weight:600;
 			}
 			h3 {
-				font-size:1.25rem;
+				font-family: "Fira Code", monospace;
+				font-size:1.125rem;
 			}
 			h4 {
+				font-family: "Fira Code", monospace;
 				font-size:1.125rem;
-				text-transform:lowercase;
+				text-transform: lowercase;
 			}
 			a {
-				color:#76e5ff;
+				color:var(--link-color);
 				text-decoration:none;
+				padding: 0 2px;
+				transition: color .2s ease-in-out;
 			}
 			a:hover {
-				color:#fff;
+				color:var(--text-color);
 			}
 			a:focus {
-				background:#fff;
-				color:black;
+				background:var(--link-color);
+				color:var(--bkg-color);
 				outline:none;
 			}
 			@media (min-width:480px) {
 				h1,h2,h3,h4 {
 					padding:0 1.5rem;
-				}
-				h2 {
-					border-bottom:0;
 				}
 			}
 		</style>
