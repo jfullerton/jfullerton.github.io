@@ -1,114 +1,132 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<title>{{ page.title }}</title>
-		<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&Poppins:wght@600&display=swap" rel="stylesheet">
-		<style>
-			* {
-				box-sizing:border-box;
-			}
-			html{
-				font-family:"Poppins", sans-serif;
-				-ms-text-size-adjust:100%;
-				-webkit-text-size-adjust:100%;
-				font-size:16px;
-				-webkit-font-smoothing:antialiased;
-			}
-			body {
-				--link-color: #E74C3C;
-			  --text-color: #222;
-			  --bkg-color: #fff;
-			}
-			body.dark-theme {
-				--link-color: #F1C40F;
-			  --text-color: #eee;
-			  --bkg-color: #121212;
-			}
-			@media (prefers-color-scheme: dark) {
-			  body {
-					--link-color: #F1C40F;
-				  --text-color: #eee;
-				  --bkg-color: #121212;
-			  }
-			  body.light-theme {
-					--link-color: #E74C3C;
-				  --text-color: #222;
-				  --bkg-color: #fff;
-			  }
-			}
-			body {
-				background-color:var(--bkg-color);
-				color:var(--text-color);
-				display:flex;
-				flex-wrap:wrap;
-				align-items:center;
-				justify-content:center;
-				height:100vh;
-				margin:0;
-				padding:2rem;
-			}
-			h1,h2,h3,h4 {
-				font-weight:300;
-				flex:0 0 100%;
-				line-height: 1;
-				text-align: center;
-				margin:0 0 .75rem;
-				position:relative;
-				padding:0;
-				text-transform: uppercase;
-			}
-			h1 {
-				font-size:2.5rem;
-				font-weight:600;
-				text-transform: none;
-			}
-			h2 {
-				font-size:1.5rem;
-				font-weight:600;
-			}
-			h3 {
-				font-family: "Fira Code", monospace;
-				font-size:1.125rem;
-			}
+
+<head>
+	<title>{{ page.title }}</title>
+	<meta name="description"
+		content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		html {
+			font-family: "Rajdhani", sans-serif;
+			-ms-text-size-adjust: 100%;
+			-webkit-text-size-adjust: 100%;
+			font-size: 20px;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		body {
+			--link-color: #fed33f;
+			--text-color: #eee;
+			--bkg-color: #121212;
+		}
+
+		body.light-theme {
+			--link-color: #e74c3c;
+			--text-color: #222;
+			--bkg-color: #fff;
+		}
+
+		body {
+			background-color: var(--bkg-color);
+			color: var(--text-color);
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+			padding: 2rem;
+		}
+		
+		* {
+			transition: all .2s ease-in-out;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4 {
+			font-size: 1.25rem;
+			font-weight: 400;
+			flex: 0 0 100%;
+			line-height: 1;
+			margin: 0 0 .25rem;
+			position: relative;
+			padding: 0;
+			text-transform: uppercase;
+			letter-spacing: .125rem;
+		}
+
+		h1 {
+			font-weight: 700;
+		}
+
+		h4 {
+			margin-bottom: 0;
+			transition: none;
+			font-size: .75rem;
+		}
+
+		a {
+			color: var(--link-color);
+			position: relative;
+			text-decoration: none;
+			text-transform: lowercase;
+		}
+
+		a::after {
+			content: "";
+			display: block;
+			background-color: currentColor;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 1px;
+			width: 0%;
+			transition: width .2s ease-in-out;
+		}
+
+		a:hover,
+		a:focus {
+			color: var(--text-color);
+			outline: none;
+			text-decoration: none;
+		}
+		
+		a:hover::after,
+		a:focus::after {
+			width: 100%;
+		}
+
+		@media (min-width:500px) {
+			h1,
+			h2,
+			h3,
 			h4 {
-				font-family: "Fira Code", monospace;
-				font-size:1.125rem;
-				text-transform: lowercase;
+				padding: 0 1.5rem;
 			}
-			a {
-				color:var(--link-color);
-				text-decoration:none;
-				padding: 0 2px;
-				transition: all .2s ease-in-out;
-			}
-			a:hover {
-				color:var(--text-color);
-			}
-			a:focus {
-				background:var(--link-color);
-				color:var(--bkg-color);
-				outline:none;
-			}
-			@media (min-width:480px) {
-				h1,h2,h3,h4 {
-					padding:0 1.5rem;
-				}
-			}
-		</style>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151687597-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		  gtag('config', 'UA-151687597-1');
-		</script>
-	</head>
-	<body>
-		<main>
-			{{ content }}
-		</main>
-	</body>
+		}
+	</style>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151687597-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'UA-151687597-1');
+	</script>
+</head>
+
+<body>
+	<main>
+		{{ content }}
+	</main>
+</body>
+
 </html>
