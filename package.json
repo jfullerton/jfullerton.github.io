@@ -6,15 +6,27 @@
     "url": "https://github.com/jfullerton/jfullerton.github.io.git"
   },
   "author": "Jared Fullerton <jared.fullerton@gmail.com>",
-  "license": "ISC",
-  "dependencies": {
-    "autoprefixer": "^9.8.5",
-    "cssnano": "^4.1.10",
-    "gulp": "^4.0.2",
-    "gulp-postcss": "^8.0.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5"
+  "license": "MIT",
+  "scripts": {
+    "development": "mix",
+    "dev": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "production": "mix --production"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "browser-sync": "^2.27.7",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "laravel-mix": "^6.0.25",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.35.2",
+    "sass-loader": "^12.1.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended-scss": "^4.3.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^3.20.1"
   },
   "browserslist": [
     "last 2 versions"

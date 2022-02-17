@@ -1,0 +1,17 @@
+{
+  "browsersync": {
+    "host": "fundriver-marketing.dev.test",
+    "proxy": "https://fundriver-marketing.dev.test",
+    "https": {
+      "key": "/Users/<your-username>/certs/_wildcard.dev.test-key.pem",
+      "cert": "/Users/<your-username>/certs/_wildcard.dev.test.pem"
+    },
+    "open": false,
+    "files": [
+      "public/css/**/*",
+      "public/images/**/*",
+      "public/javascript/**/*",
+      "app/templates/**/*"
+    ]
+  }
+}
