@@ -27,60 +27,53 @@
  *
  * 2013 by Tim Pietrusky
  * timpietrusky.com
- * 
+ *
+ * Rewritten in vanilla JavaScript (jQuery dependency removed).
  */
-StarWars = (function() {
-  
-  /* 
-   * Constructor
-   */
-  function StarWars(args) {
-    // Context wrapper
-    this.body = $('body');
-    this.el = $(args.el);
-    
-    // Audio to play the opening crawl
-    this.audio = this.el.find('audio').get(0);
-    this.audio.volume = 0.25;
-    
-    // Start the animation
-    this.start = this.el.find('.start');
-    
-    // The animation wrapper
-    this.animation = this.el.find('.animation');
-    
-    // Remove animation and shows the start screen
-    this.reset();
+(function () {
+  'use strict';
 
-    // Start the animation on click
-    this.start.bind('click', $.proxy(function() {
-      this.start.hide();
-      this.start.find("p").html("Replay");
-      this.audio.play();
-      this.el.append(this.animation);
-      this.body.addClass('stars');
-    }, this));
-    
-    // Reset the animation and shows the start screen
-    $(this.audio).bind('ended', $.proxy(function() {
-      this.audio.currentTime = 0;
-      this.reset();
-    }, this));
+  var el = document.querySelector('.starwars');
+  if (!el) {
+    return;
   }
-  
-  /*
-   * Resets the animation and shows the start screen.
-   */
-  StarWars.prototype.reset = function() {
-    this.start.show();
-    this.cloned = this.animation.clone(true);
-    this.animation.remove();
-    this.animation = this.cloned;
-  };
 
-  return StarWars;
+  // Audio to play the opening crawl
+  var audio = el.querySelector('audio');
+  audio.volume = 0.25;
+
+  // Start the animation
+  var start = el.querySelector('.start');
+
+  // The animation wrapper. Detached from the DOM while idle; a deep clone
+  // is re-appended on each play so the CSS animations restart from zero.
+  var animation = el.querySelector('.animation');
+
+  // Resets the animation and shows the start screen
+  function reset() {
+    start.style.display = '';
+    var cloned = animation.cloneNode(true);
+    if (animation.parentNode) {
+      animation.parentNode.removeChild(animation);
+    }
+    animation = cloned;
+  }
+
+  // Remove animation and show the start screen
+  reset();
+
+  // Start the animation on click
+  start.addEventListener('click', function () {
+    start.style.display = 'none';
+    start.querySelector('p').textContent = 'Replay';
+    audio.play();
+    el.appendChild(animation);
+    document.body.classList.add('stars');
+  });
+
+  // Reset the animation and show the start screen when the music ends
+  audio.addEventListener('ended', function () {
+    audio.currentTime = 0;
+    reset();
+  });
 })();
-
-new StarWars({
-  el : '.starwars'
-});

@@ -10,7 +10,7 @@ collections:  null
 # Handling Reading
 safe:         false
 include:      [".htaccess"]
-exclude:      [".editorconfig", "node_modules", "package.json", "browsersync-config.*", "webpack.mix.js", "README.md", "mix-manifest.json"]
+exclude:      [".editorconfig", "node_modules", "package.json", "package-lock.json", "vite.config.js", "README.md", "AGENTS.md", "CLAUDE.md"]
 keep_files:   [".git", ".svn"]
 encoding:     "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
