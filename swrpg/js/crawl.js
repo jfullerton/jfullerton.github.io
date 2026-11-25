@@ -42,7 +42,6 @@
   var audio = el.querySelector('audio');
   audio.volume = 0.25;
 
-  // Start the animation
   var start = el.querySelector('.start');
 
   // The animation wrapper. Detached from the DOM while idle; a deep clone
@@ -59,10 +58,8 @@
     animation = cloned;
   }
 
-  // Remove animation and show the start screen
   reset();
 
-  // Start the animation on click
   start.addEventListener('click', function () {
     start.style.display = 'none';
     start.querySelector('p').textContent = 'Replay';
